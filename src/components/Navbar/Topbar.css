@@ -61,11 +61,13 @@
     background-color: #fff;
     font-size: 20px;
     border: none;
-    color: #253adc;
+    color: #000740;
+    cursor: pointer;
+
   }
   .login{
     font-size: 20px;
     color: white;
+    cursor: pointer;
+
   }
-  
-  
