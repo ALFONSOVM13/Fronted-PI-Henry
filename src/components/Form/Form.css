@@ -7,6 +7,10 @@
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
 }
+html {
+  height: 100%;
+  overflow: hidden;
+}
 
 ::selection{
   background: rgba(26,188,156,0.3);

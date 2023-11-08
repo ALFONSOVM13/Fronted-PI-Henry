@@ -37,6 +37,7 @@
     display: flex;
     padding: 10px;
     border-radius: 10px;
+    cursor: pointer;
 
   }
   
@@ -60,9 +61,11 @@
     background-color: #fff;
     font-size: 20px;
     border: none;
-    color: #1e234d;
+    color: #253adc;
   }
   .login{
     font-size: 20px;
     color: white;
   }
+  
+  

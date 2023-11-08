@@ -52,11 +52,13 @@ const Navbar = ({ handleLogout, userEmail }) => {
           handleLogout={handleLogout}
         />
       </div>
+      
       <div className={`navbar__menu ${isMenuOpen ? 'open' : ''}`}>
+      <button className="logout-button" onClick={handleLogout}>Logout</button>
         <NavLink exact to="/home" onClick={closeMenu}>Home </NavLink>
         <NavLink to="/favorites" onClick={closeMenu}>Favorites </NavLink>
         <NavLink to="/about" onClick={closeMenu}>About </NavLink>
-        <button onClick={handleLogout}>Logout</button>
+        
       </div>
     </nav>
   );

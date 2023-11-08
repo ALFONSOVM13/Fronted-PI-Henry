@@ -82,27 +82,24 @@
 
 @media (max-width: 1023px) {
     .navbar__menu {
-        display: none;
-        background-image: url('https://i.pinimg.com/originals/56/c8/32/56c832354d646b749ec61af1033d8718.jpg');
-        background-size:contain;
-        background-repeat:no-repeat;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh;
-        background-color: #000000;
-        text-align: center;
-        justify-content: flex-start;
-        padding: 15px;
-        z-index: 20;
-    }
-
-    .navbar__menu.open {
+        height: 100%;
+        background-color: #1e234d; /* Fondo negro semi-transparente */
+        z-index: 100; /* Asegura que el menú aparezca encima de otros elementos */
         display: flex;
         flex-direction: column;
-        
-    }
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-100%); /* Mueve el menú fuera de la pantalla */
+        transition: transform 0.3s ease-in-out; /* Agrega una transición suave */
+      }
+
+      .navbar__menu.open {
+        transform: translateX(0); /* Muestra el menú al desplazarlo a la posición 0 */
+      }
 
     .navbar__toggle {
         position: fixed;
@@ -126,12 +123,33 @@
     transform: rotate(180deg);
 }
 
-@media (max-width: 1019px) {
+@media (max-width: 1023px) {
      
       .topbar-wrapper {
         display: none; // Oculta el componente Topbar en dispositivos móviles
       }
     
+  }
+
+  .logout-button {
+    padding: 5px 20px; 
+    background-color: #ff0000; 
+    color: #ffffff; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+
+  }
+  
+  .logout-button:hover {
+    background-color: #a64545; /* Cambio de color al pasar el cursor */
+    /* Otros estilos al pasar el cursor */
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 4000px) {
+    .logout-button {
+      display: none;
+    }
   }
 
   
