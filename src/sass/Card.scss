@@ -1,0 +1,227 @@
+@use 'variables' as v;
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+}
+
+.card {
+    width: 350px;
+    height: 250px;
+    margin: 20px;
+    border-radius: 46px;
+    background-color: v.$color-primary;
+    box-shadow: 3px 3px 10px;
+    padding: 48px 12px 12px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    @media screen and (max-width: 370px) {
+      width: 280px;
+      height: 200px;
+      padding: 24px 6px 6px;
+      margin: 10px;
+  }
+    
+
+    &__number{
+        color: v.$color-title;
+        position: absolute;
+        bottom:  0px;
+        background-color: v.$color-secondary;
+        left: 0px;
+        padding: 20px 12px;
+        cursor:default;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    &__name {
+        background-color: v.$color-secondary;
+        text-align: center;
+        color: v.$color-title;
+        width: 100%;
+        font-size: 22px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 8px 12px;
+        font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        &:active {
+          transform: translateY(2px);
+        }
+        @media screen and (max-width: 370px) {
+          font-size: 15px;
+      }
+    }
+    &__img {
+        position: absolute;
+        top: 65px;
+        left: 105px;
+        width: 140px;
+        border-radius: 50%;
+        @media screen and (max-width: 370px) {
+          width: 100px;
+          left: 100px;
+      }
+    }
+
+    &__delete-button {
+        background-color: v.$color-primary;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 4px;
+        right: 20px;
+        display: none;
+        border-radius: 46px;
+        &:active {
+          transform: translateY(4px);
+        }
+
+        .card:hover & {
+            display: block;
+        }
+    }
+
+    &__favorite-button{
+        background: v.$color-secondary;
+        border: none;
+        padding: 20px 12px;
+        position: absolute;
+        margin: 0;
+        bottom: 0;
+        right: 0;
+        cursor: pointer;
+        &:active {
+            transform: translateY(2px); 
+          }
+    }
+    $animation-duration: 1s; 
+
+    .green-dot, .red-dot, .question-mark {
+      top: 70px;
+      position: absolute;
+      left: 110px;
+      font-size: 20px;
+      animation: blinkAnimation $animation-duration infinite; 
+    }
+    
+    @keyframes blinkAnimation {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0; 
+      }
+      100% {
+        opacity: 1; 
+      }
+    }
+    
+      
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    font-size: 32px;
+    margin: 10px 10px 10px 10px;
+    background-color: #D91A4D;
+    cursor: pointer;
+    box-shadow: 1px 8px 1px v.$color-primary;
+    &:active {
+      transform: translateY(6px);
+    }
+
+
+    &:disabled {
+      opacity: 0.2; // Ajusta la opacidad para el estado deshabilitado según sea necesario
+      cursor: not-allowed;
+    }
+
+    &.active:active {
+      color: #fff;
+      transform: translateY(6px);
+      box-shadow: none;
+    }
+
+    &.page-number {
+      color: #fff;
+    }
+    &.active {
+      color: white;
+      background-color: v.$color-secondary; // Color amarillo para la página activa
+    }
+  }
+}
+
+/* Estilos para el componente de búsqueda */
+.searchbar {
+  display: flex;
+  max-width: 700px;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #104570;
+  border-radius: 5px;
+  margin: 15px auto;
+  box-shadow: 0 0 10px rgba(0, 255, 42, 0.666);
+}
+
+input[type='search'] {
+  flex: 1;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  max-width: 200px;
+}
+
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchbar__search {
+  background-color: #3498db;
+  color: #fff;
+}
+
+/* Estilos para hacer el componente responsive */
+@media screen and (max-width: 768px) {
+  .searchbar {
+    flex-direction: column;
+    align-items: stretch;
+    width: 160px;
+  }
+
+  input[type='search'] {
+    margin: 10px;
+  }
+}
+
+
+

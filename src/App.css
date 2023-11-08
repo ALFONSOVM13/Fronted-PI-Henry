@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #198961; /* Cambiar el color de fondo si se desea proporcionar un color alternativo como respaldo en caso de que la imagen no se cargue */
+  overflow-x: hidden;
+  
+}
+img {
+  max-width: 1000px;
+}
+
+
+
+
+
+/* Estilos para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #cdd0cc;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7ea372;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #43fa00;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+/* Ajustar el contenedor principal para permitir que el componente Loading se expanda */
+
+.contenedor1 {
+  width: 100%; /* Ancho del 100% del contenedor padre */
+  height: 100vh; /* Altura del 100% del viewport */
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  border: 2px solid black; /* Añadir un borde de 2px de color negro */
+  background-image: url('https://images4.alphacoders.com/794/thumb-1920-794366.jpg'); /* Establecer una imagen de fondo */
+  background-size: cover; /* Ajustar la imagen de fondo para que cubra todo el contenedor */
+  background-position: center; /* Centrar la imagen de fondo */
+}
+.contenedor-padre{
+  margin: 5px;
+  display: flex;
+  align-items: center; /* Centrar verticalmente */
+  border: 2px solid rgb(254, 254, 254); /* Añadir un borde de 2px de color negro */
+  background-color: rgb(9, 6, 50);
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+
+}
+/* Estilos para el bloque de detalles del personaje */
+.character-details {
+  text-align: center;
+}
+
+/* Estilos de la imagen del personaje */
+.imagen-personaje {
+  border-radius: 50%; /* Para una forma circular si la imagen es cuadrada */
+  height: 300px;
+  width: auto;
+  margin: 20px;
+}
+
+
+/* Estilos del nombre del personaje */
+.h2 {
+  font-size: 44px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: #0BB10C;
+}
+
+/* Estilos de los subtítulos de información */
+.h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: white;
+}
+.button-animation {
+  transition: transform 0.2s ease; /* Adjust the duration and easing as needed */
+}
+
+.button-animation.active {
+  transform: translateY(10px); /* Adjust the transformation as needed */
+}
+
+
+
+
+
+

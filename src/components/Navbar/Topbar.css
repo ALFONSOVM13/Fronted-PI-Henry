@@ -1,0 +1,68 @@
+/*--------------------------------------------------------------
+# Top Bar
+--------------------------------------------------------------*/
+#topbar {
+    background: #1e234d;
+    height: 40px;
+    font-size: 14px;
+    transition: all 0.5s;
+    z-index: 996;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #fecha{
+    font-size: 20px;
+    color: #fff;
+    margin-left: 5px;
+  }
+  .fecha{
+    color: #fff;
+    display: flex;
+    align-items: center;
+  
+    
+  }
+  @media (max-width: 768px) {
+    .fecha {
+      display: none;
+    }
+  }
+  
+  #topbar.topbar-scrolled {
+    top: -40px;
+  }
+
+  .dropdown-container {
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+
+  }
+  
+  /* Estilos para el icono de usuario */
+  .user-icon {
+    pointer-events: none;
+    margin-left: 5px;
+    color: #ffffff;
+    font-size: 20px; /* Cambia el color del icono según tu diseño */
+  }
+  
+  /* Estilos personalizados para el dropdown */
+  .custom-dropdown {
+    width: 20px;
+    background-color: transparent; 
+    border: none;
+    cursor: pointer;
+    color: #fff;
+  }
+  .custom-dropdown option {
+    background-color: #fff;
+    font-size: 20px;
+    border: none;
+    color: #1e234d;
+  }
+  .login{
+    font-size: 20px;
+    color: white;
+  }

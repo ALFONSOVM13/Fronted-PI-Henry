@@ -1,0 +1,45 @@
+@use 'variables' as v;
+
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+
+  img {
+    width: 400px;
+    height: auto;
+  }
+}
+
+.about-container {
+  max-width: 700px;
+  margin: 30px auto;
+  background-color: v.$color-primary;
+
+  h1 {
+    font-size: 44px;
+    margin-bottom: 20px;
+    color: v.$color-title;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: inline;
+    margin-left: 5px;
+  }
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
+}
+
+  
