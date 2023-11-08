@@ -121,7 +121,7 @@ function App() {
       {(location.pathname === '/home' || location.pathname === '/favorites' || location.pathname === '/about') && !location.pathname.includes('/detail/') && (
         <Navbar
         userEmail={userEmail}
-          handleLogout={handleLogout}
+        handleLogout={handleLogout}
         />
       )}
       <Routes>
