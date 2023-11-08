@@ -148,6 +148,7 @@ form .signup-link a:hover{
   height: 400vh;
   top: 50%;
   left: 50%;
+  overflow: hidden;
   z-index: -1;
   margin-top: -200vh;
   margin-left: -200vw;
