@@ -41,7 +41,7 @@ const Form = ({ login, setUserEmail }) => {
       <img 
   src="https://1000logos.net/wp-content/uploads/2022/03/Rick-and-Morty.png" 
   alt="" 
-  style={{ display: 'block', margin: '0 auto', width: '40%', maxWidth: '600px' }}
+  style={{ display: 'block', margin: '0 auto', width: '40%', maxWidth: '00px' }}
 />
         <div className="space"></div>
         <div className="wraper">

@@ -24,6 +24,16 @@ export default function Cards({ characters, onClose, onSearch, onClearAll, onAdd
     }
   };
 
+  const handleSearchInputChange = (e) => {
+    const newValue = e.target.value;
+  
+    // Use regex to allow only positive numbers
+    const isValidInput = /^(?:[1-9]|[1-9][0-9]|[1-9][0-9][0-9])$/.test(newValue) || newValue === '';  
+    if (isValidInput) {
+      setSearchValue(newValue);
+    }
+  };
+
   const handleAddRandom = () => {
     onAddRandom();
   };
@@ -64,12 +74,12 @@ export default function Cards({ characters, onClose, onSearch, onClearAll, onAdd
   return (
     <div>
       <div className = 'searchbar'>
-        <input
-          type="search"
-          placeholder="Search by ID"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-        />
+      <input
+  type="search"
+  placeholder="Search by ID"
+  value={searchValue}
+  onChange={handleSearchInputChange}
+/>
         <button className='searchbar__search' onClick={handleSearch}>Search</button>
         <button onClick={handleAddRandom}>Add Random</button>
         <button onClick={onClearAll}>Clear All</button>

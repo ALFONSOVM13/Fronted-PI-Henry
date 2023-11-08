@@ -29,10 +29,15 @@ function App() {
   const login = (userData) => {
     if (userData.password === PASSWORD && userData.email === EMAIL) {
       setAccess(true);
-      sessionStorage.setItem('access', 'true'); // Guardar la sesión en el sessionStorage
+      sessionStorage.setItem('access', 'true'); // Store the session in sessionStorage
       navigate('/home');
     } else {
-      alert('Credenciales incorrectas. Inténtalo de nuevo.');
+      // Show an alert with SweetAlert if the credentials are incorrect
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Incorrect email or password. Please try again.'
+      });
     }
     setUserEmail(userData.email);
   };
@@ -71,6 +76,13 @@ function App() {
           const findObj = apiCharacters.find((character) => character.name === data.name);
           if (!findObj) {
             setApiCharacters([...apiCharacters, data]);
+            Swal.fire({
+              icon: 'success',
+              title: 'New card added!',
+              text: 'A new card has been successfully added.',
+              showConfirmButton: false,
+              timer: 1000 // Adjust the timer or other options as needed
+            });
           } else {
             Swal.fire({
               title: 'ID already exists!',
@@ -101,9 +113,18 @@ function App() {
       .then(response => {
         const newCharacter = response.data;
         setApiCharacters([...apiCharacters, newCharacter]);
+  
+        // Show a SweetAlert notification upon successful addition of a new card
+        Swal.fire({
+          icon: 'success',
+          title: 'New card added!',
+          text: 'A new card has been successfully added.',
+          showConfirmButton: false,
+          timer: 1000 // Adjust the timer or other options as needed
+        });
       })
       .catch(error => {
-        console.error("Error al obtener el personaje aleatorio:", error);
+        console.error("Error fetching random character:", error);
       });
   };
 
@@ -112,7 +133,21 @@ function App() {
   };
 
   function onClearAll() {
-    setApiCharacters([]);
+    // Show a SweetAlert confirmation dialog before clearing the cards
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'Do you want to delete all the searched cards?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, clear all',
+      cancelButtonText: 'No, keep them'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setApiCharacters([]);
+        // Additional actions upon confirmation to clear the cards
+        // You can add further logic here if needed after clearing the cards
+      }
+    });
   }
 
   return (
