@@ -2,31 +2,32 @@ import { AiFillCheckCircle } from 'react-icons/ai';
 
 export const validateForm = (userData) => {
     let errors = {};
-    let isValid = true; // Agregar un indicador para la validación
+    let isValid = true; // Adding an indicator for validation
   
-    // Validación del campo de correo electrónico
+    // Email field validation
     if (!userData.email) {
-      errors.email = 'El campo de correo electrónico es obligatorio';
-      isValid = false;
+        errors.email = 'Email field is required';
+        isValid = false;
     } else if (!/\S+@\S+\.\S+/.test(userData.email)) {
-      errors.email = 'Ingresa un correo electrónico válido';
-      isValid = false;
+        errors.email = 'Enter a valid email';
+        isValid = false;
     } else if (userData.email.length > 35) {
-      errors.email = 'El correo electrónico no puede tener más de 35 caracteres';
-      isValid = false;
+        errors.email = 'Email cannot exceed 35 characters';
+        isValid = false;
     }
   
-    // Validación del campo de contraseña
+    // Password field validation
     if (!userData.password) {
-      errors.password = 'El campo de contraseña es obligatorio';
-      isValid = false;
+        errors.password = 'Password field is required';
+        isValid = false;
     } else if (!/(?=.*\d)/.test(userData.password)) {
-      errors.password = 'La contraseña debe contener al menos un número';
-      isValid = false;
+        errors.password = 'Password must contain at least one number';
+        isValid = false;
     } else if (userData.password.length < 6 || userData.password.length > 10) {
-      errors.password = 'La contraseña debe tener entre 6 y 10 caracteres';
-      isValid = false;
+        errors.password = 'Password must be between 6 and 10 characters';
+        isValid = false;
     }
   
-    return { errors, isValid }; // Retornar los errores y el estado de la validación
+    return { errors, isValid }; // Returning errors and validation state
 };
+

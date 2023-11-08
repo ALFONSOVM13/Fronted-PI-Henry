@@ -2,7 +2,7 @@
 
 .contenedor1 {
   width: 100%; /* Ancho del 100% del contenedor padre */
-  height: 100vh; /* Altura del 100% del viewport */
+  height: 100vh; 
   display: flex;
   justify-content: center; /* Centrar horizontalmente */
   align-items: center; /* Centrar verticalmente */
@@ -30,7 +30,7 @@
 /* Estilos de la imagen del personaje */
 .imagen-personaje {
   border-radius: 50%; /* Para una forma circular si la imagen es cuadrada */
-  height: 300px;
+  height: 200px;
   width: auto;
   margin: 20px;
 }
@@ -38,7 +38,7 @@
 
 /* Estilos del nombre del personaje */
 .h2 {
-  font-size: 44px;
+  font-size: 34px;
   margin-bottom: 10px;
   color: white;
   background-color: #0BB10C;
